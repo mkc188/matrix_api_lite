@@ -3007,7 +3007,7 @@ class TurnServerCredentials {
 
   TurnServerCredentials.fromJson(Map<String, dynamic> json)
       : password = json['password'] as String,
-        ttl = json['ttl'] as int,
+        ttl = double.parse(json['ttl'].toString()).toInt(),
         uris = (json['uris'] as List).map((v) => v as String).toList(),
         username = json['username'] as String;
   Map<String, dynamic> toJson() => {
